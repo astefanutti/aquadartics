@@ -3,6 +3,6 @@
 *.dart.js.deps
 pubspec.lock
 packages/
-web/packages/
+web/packages
 
 .idea/
