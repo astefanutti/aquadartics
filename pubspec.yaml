@@ -1,0 +1,4 @@
+name: aquatics
+dependencies:
+  browser: any
+  stagexl: any

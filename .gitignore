@@ -1,0 +1,8 @@
+*.dart.js
+*.dart.js.map
+*.dart.js.deps
+pubspec.lock
+packages/
+web/packages/
+
+.idea/
