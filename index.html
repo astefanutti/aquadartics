@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     <title>Aquatics</title>
+    <link href="aquatics.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div>
-        <img src="header.gif">
-    </div>
-    </div>
-        <canvas id="stage" width="600px" height="600px"></canvas>
-    </div>
-    <script type="application/dart" src="aquatics.dart"></script>
-    <script src="dart.js"></script>
+<table class="layout" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="header">
+            <img src="header.gif" width="660" height="305"/><br/>
+        </td>
+        <td class="shadow" rowspan="2">
+            <img src="shadow.gif" width="90" height="90"/><br/>
+        </td>
+        <td class="background" rowspan="2">
+        </td>
+    </tr>
+    <tr>
+        <td class="content">
+            <div class="animation">
+                <canvas id="stage" width="600px" height="600px"></canvas>
+            </div>
+            <script type="application/dart" src="aquatics.dart"></script>
+            <script src="dart.js"></script>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
