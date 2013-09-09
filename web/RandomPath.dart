@@ -99,7 +99,6 @@ class RandomPath extends MovieClip {
         _y1 = _y4;
         var r = _r0 + _radius * (_random.nextDouble() - 0.5);
         var a = _va - PI + _angle * _random.nextDouble() * _RAD;
-
         _x4 = _x1 + r * cos(a);
         _y4 = _y1 + r * sin(a);
         var x4t = _x4;
