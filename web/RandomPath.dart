@@ -19,7 +19,7 @@ class RandomPath extends MovieClip {
               speed: 0.01, alpha: 0.15, scale: 1,
               count: 10, period: 70,
               r0:100, radius:20, vectorRadius:50,
-              a0:45, angle:40, vectorAngle:80}){
+              a0:45, angle:40, vectorAngle:80}) {
     _x0 = x;
     _y0 = y;
     _top = top;
