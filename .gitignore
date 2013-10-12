@@ -1,6 +1,7 @@
 *.dart.js
 *.dart.js.map
 *.dart.js.deps
+*.dart.precompiled.js
 pubspec.lock
 packages/
 web/packages
