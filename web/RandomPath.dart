@@ -6,57 +6,46 @@ class RandomPath extends MovieClip {
 
   int _top, _bottom, _left, _right;
   double _scale, _alpha, _speed;
-  double _x0, _y0, _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4;
+  double _x1, _y1, _x2, _y2, _x3, _y3, _x4, _y4;
   double _r0, _radius, _vectorRadius, _vr;
-  double _a0, _angle,_vectorAngle, _va;
-  double _t;
-  List<DisplayObject> _elements = new List();
+  double _a0, _angle, _vectorAngle, _va;
+  double _t = 0.0;
   Duration _period;
   Timer _timer;
   Random _random = new Random();
+  List<DisplayObject> _elements = new List();
 
-  RandomPath({x, y, top, left, bottom, right,
-              speed: 0.01, alpha: 0.15, scale: 1,
-              count: 10, period: 70,
-              r0:100, radius:20, vectorRadius:50,
-              a0:45, angle:40, vectorAngle:80}) {
-    _x0 = x;
-    _y0 = y;
-    _top = top;
-    _bottom = bottom;
-    _left = left;
-    _right = right;
-    _speed = speed;
-    _alpha = alpha;
-    _scale = scale;
-    _r0 = r0;
-    _radius = radius;
-    _vectorRadius = vectorRadius;
-    _a0 = a0;
-    _angle = angle;
-    _vectorAngle = vectorAngle;
+  RandomPath({double x0, double y0, int top, int left, int bottom, int right,
+              double speed: 0.01, double alpha: 0.15, double scale: 1.0,
+              double r0: 100.0, double radius: 20.0, double vectorRadius: 50.0,
+              double a0: 45.0, double angle: 40.0, double vectorAngle: 80.0,
+              int count: 10, int period: 70}) {
+
+    _top = top; _bottom = bottom; _left = left; _right = right;
+    _speed = speed; _alpha = alpha; _scale = scale;
+    _r0 = r0; _radius = radius; _vectorRadius = vectorRadius;
+    _a0 = a0; _angle = angle; _vectorAngle = vectorAngle;
     _period = new Duration(milliseconds: period);
 
-    _x1 = _x0;
-    _y1 = _y0;
+    _x1 = x0; _y1 = y0;
     var r = _r0 + _radius * (_random.nextDouble() - 0.5);
     var a = (_a0 + _angle * (_random.nextDouble() - 0.5)) * _RAD;
     _x4 = _x1 + r * cos(a);
     _y4 = _y1 + r * sin(a);
     _vr = _vectorRadius * (1 + _random.nextDouble() - 0.5);
-    _va = a + _vectorAngle * (_random.nextDouble() - 0.5) * _RAD;
-    _x2 = _x1 + _vr * cos(_va);
-    _y2 = _y1 + _vr * sin(_va);
-    _vr = _vectorRadius * (1 + _random.nextDouble() - 0.5);
     _va = a + PI + _vectorAngle * (_random.nextDouble() - 0.5) * _RAD;
     _x3 = _x4 + _vr * cos(_va);
     _y3 = _y4 + _vr * sin(_va);
-    _t = 0.0;
+    _vr = _vectorRadius * (1 + _random.nextDouble() - 0.5);
+    _va = a + _vectorAngle * (_random.nextDouble() - 0.5) * _RAD;
+    _x2 = _x1 + _vr * cos(_va);
+    _y2 = _y1 + _vr * sin(_va);
 
     for (var i = 0; i < count; i++) {
       Aquatic mc = new Aquatic();
       mc.x = _x1;
       mc.y = _y1;
+      mc.rotation = _va;
       mc.scaleX = mc.scaleY = _scale;
       mc.alpha = _alpha;
       _elements.add(mc);
@@ -69,10 +58,7 @@ class RandomPath extends MovieClip {
   }
 
   void stopLoop() {
-    if (_timer != null) {
-      _timer.cancel();
-      _timer = null;
-    }
+    if (_timer != null) _timer.cancel(); _timer = null;
   }
 
   void _loop(Timer timer) {
