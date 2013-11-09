@@ -1,6 +1,6 @@
 part of aquatics;
 
-class RandomPath extends MovieClip {
+class RandomPath extends Sprite {
 
   static const double _RAD = PI / 180.0;
 
