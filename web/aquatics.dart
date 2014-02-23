@@ -10,19 +10,19 @@ part 'Aquatic.dart';
 
 void main() {
   var canvas = html.querySelector('#stage');
-  var stage = new Stage('myStage', canvas);
+  var stage = new Stage(canvas);
   var renderLoop = new RenderLoop();
   renderLoop.addStage(stage);
   var padding = 200;
   var speed = 0.008;
   var scale = 0.05;
   var random = new Random();
-  for (int i = 0; i < 25; i++) {
+  for (int i = 0; i < 30; i++) {
     var a0 = 360 * random.nextDouble();
     var x0 = padding + random.nextDouble() * (stage.stageWidth - 2 * padding);
     var y0 = padding + random.nextDouble() * (stage.stageHeight - 2 * padding);
-    scale += 0.022;
-    speed += 0.0013;
+    scale += 0.020;
+    speed += 0.0010;
     var path = new RandomPath(x0: x0, y0: y0, a0: a0,
         top: 50, bottom: stage.stageHeight - 50, left: 50, right: stage.stageWidth - 50,
         scale: scale, speed: speed);
