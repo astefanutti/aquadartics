@@ -2,3 +2,4 @@ Small experiment simulating autonomous aquatic characters written in [Dart](http
 
 [![Click to see it in action!](https://raw.github.com/astefanutti/aquadartics/gh-pages/screenshot.png)](http://astefanutti.github.io/aquadartics/)
 
+Copyright © 2013-2014, Antonin Stefanutti
