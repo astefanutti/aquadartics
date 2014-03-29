@@ -12,6 +12,7 @@ body {
 }
 table.layout {
 	height: 100%;
+    position: relative;
     background-color: #FFFFFF;
     -webkit-box-shadow: 7px 7px 30px 0px rgba(50, 50, 50, 0.65);
     -moz-box-shadow:    7px 7px 30px 0px rgba(50, 50, 50, 0.65);
@@ -21,6 +22,9 @@ div.animation {
 	text-align:center;
 }
 div.copyright {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     margin-top: 30px;
     text-align: right;
     color: #4CCDF9;
